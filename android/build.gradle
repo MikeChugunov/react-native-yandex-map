@@ -53,7 +53,9 @@ repositories {
 
 dependencies {
     implementation "com.facebook.react:react-native:${safeExtGet('reactnativeVersion', '+')}"
-    implementation 'com.yandex.android:mapkit:3.4.0'
+    implementation ('com.yandex.android:mapkit:3.0.0') {
+        exclude group: "com.google.android.gms"
+    }
 }
 
 def configureReactNativePom(def pom) {
